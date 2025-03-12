@@ -20,9 +20,8 @@ The navigation menu does **not work** on the live page because this is a static 
 - **JavaScript** – Basic interactivity  
 
 ## **Future Improvements**  
-✅ Implement a fully functional navigation menu  
-✅ Add responsive design for mobile compatibility  
 ✅ Improve CSS animations and transitions  
+✅ Add responsive design for more Javascript Codes
 
 ## **Screenshots**  
 <INSERT SCREENSHOT>
