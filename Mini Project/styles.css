@@ -1,0 +1,494 @@
+body {
+    font-family: 'Shrikhand', Arial, sans-serif; /* Using Arial as fallback */
+    margin: 0;
+    padding: 0;
+    background-color: #189AB4;
+    background-image: url('Image/design_1-removebg.png');
+    background-repeat: no-repeat;
+    background-position: top left;
+    transform: translateY(20px);
+}
+
+/* Scroll Animations */
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#container {
+    animation: appear 5s ease-out forwards;
+    animation-timeline: view();
+    animation-range: 0% cover 40%;
+}
+
+/* Sidebar Container */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 60px;
+    background: #05445E;
+    overflow-x: hidden;
+    padding-top: 20px;
+    transition: width 0.4s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    overflow-y: auto;
+}
+
+/* Expand Sidebar on Hover */
+.sidebar:hover {
+    width: 250px; /* Expand fully */
+    overflow: visible;
+}
+
+/* Sidebar Items */
+.sidebar ul {
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    list-style: none;
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+/* Sidebar Icons */
+.sidebar ul li a .icon {
+    min-width: 60px; /* Keeps icons visible when collapsed */
+    font-size: 1.5rem;
+}
+.sidebar:hover ul li a {
+    opacity: 1;
+}
+
+/* Sidebar Text */
+.sidebar ul li a .text {
+    opacity: 0; /* Hide text when collapsed */
+    transition: opacity 0.3s ease-in-out;
+    margin-left: 10px;
+}
+.sidebar:hover ul li a .text {
+    opacity: 1;
+}
+
+/* Header container */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    padding: 20px;
+    font-size: 1.5em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+
+.header span {
+    flex: 1;
+    justify-content: center;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.span-darwin {
+    text-align: right;
+}
+
+/* Intro container */
+.intro {
+    color: white;
+    padding: 2vw 5vw; /* Responsive padding */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px; /* Adds spacing */
+    position: relative;
+}
+
+/* Heading */
+.intro h1 {
+    font-size: 2.5em;
+}
+
+/* Intro Text */
+.intro-text {
+    flex-grow: 1;
+    max-width: 50%;
+    min-width: 300px; /* Prevents shrinking too much */
+}
+
+/* Profile Image */
+.profile-img {
+    max-width: 40%;
+    height: auto;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    cursor: pointer;
+    /* Ensure it stays on top when both elements are present */
+    position: relative;
+    z-index: 2;
+}
+
+.profile-img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.profile-img.flip-out {
+    transform: rotateY(180deg);
+    opacity: 0;
+}
+
+.hidden-box {
+    display: none;  /* Initially hidden */
+    background: #b6ccd7;
+    color: black;
+    border-radius: 10px;
+    width: 40%;  /* Same as .profile-img */
+    height: auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    cursor: pointer;
+    animation: fadeInBox 0.5s ease-in-out;
+    /* Ensure it's behind the image by default */
+    z-index: 1;
+}
+
+@keyframes fadeInBox {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* Hobbies Section */
+
+.hobbies {
+    background: #e0e6e9;
+    background-image: url('Image/design_2-removebg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 5vw;
+    text-align: center;
+}
+
+.hobbies h2 {
+    font-size: 1.8em;
+}
+
+/* Hobby Items */
+.hobby-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: min(8vw, 1000px);
+    padding: 10px;
+}
+
+.hobby {
+    width: 180px; /* Slightly smaller for better fit */
+    text-align: center;
+}
+
+.hobby img {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.hobby img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Contact Container */
+
+.contact-container {
+    padding: 3vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.contact {
+    background: #b6ccd7;
+    color: black;
+    padding: 15px;
+    text-align: left;
+    width: 250px;
+    max-width: 90%; /* Makes it responsive */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.contact h2 {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+/* Contact Items */
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.contact-item img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    mix-blend-mode: multiply;
+}
+
+.contact-item a {
+    text-decoration: none;
+    color: black;
+    font-size: 0.9em;
+}
+contact-text {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.contact-content-text {
+    color: white;
+    padding: 20px;
+    margin-left: 20px;
+    max-width: 50%;
+    font-size: 0.9em;
+    text-align: left;
+}
+
+/*  Responsive Media Queries */
+
+/* Tablets & Medium Screens */
+@media (max-width: 1024px) {
+    .intro {
+        flex-direction: column;
+        text-align: center;
+    }
+    .intro-text, .profile-img {
+        max-width: 80%;
+    }
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .contact {
+        width: 90%;
+        text-align: center;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+    .intro-text, .profile-img {
+        max-width: 100%;
+    }
+    .hobby-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .contact-content-text {
+        max-width: 100%;
+        text-align: center;
+    }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+    .header span {
+        font-size: 0.9em;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .intro h1 {
+        font-size: 2em;
+    }
+    .contact h2 {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 600px) {
+    .sidebar {
+        width: 5px;
+        transition: width 0.4s ease-in-out;
+    }
+    .sidebar:hover {
+        width: 250px;
+    }
+}
+
+
+
+/* .intro {
+    color: white;
+    padding-top: 0px;
+    padding-bottom: 50px;
+    padding-left: 100px;
+    padding-right: 50px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.intro h1 {
+    font-size: 2.5em;
+}
+.intro-text {
+    flex-grow: 1;
+    max-width: 50%;
+}
+.profile-img {
+    max-width: 40%;
+    height: auto;
+}
+.hobbies {
+    background: #e0e6e9;
+    padding: 20px;
+    text-align: center;
+}
+.hobbies h2 {
+    font-size: 1.8em;
+}
+.hobby-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+.hobby {
+    width: 200px;
+    text-align: center;
+}
+.hobby img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px; 
+}
+.contact-container {
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.contact {
+    background: #b6ccd7;
+    color: black;
+    padding: 15px;
+    text-align: left;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+.contact h2 {
+    text-align: center;
+    font-size: 1.5em;
+}
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+.contact-item img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    mix-blend-mode: multiply;
+}
+.contact-item a {
+    text-decoration: none;
+    color: black;
+    font-size: 0.9em;
+}
+contact-text {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.contact-content-text {
+    color: white;
+    padding: 20px; 
+    margin-left: 20px;
+    max-width: 50%;
+    font-size: 0.8em;
+    text-align: left;
+} */
+
+
+
+
+/* .contact {
+    background: #b6ccd7;
+    color: black;
+    padding: 15px;
+    text-align: left;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
+.contact h2 {
+    text-align: center;
+    font-size: 1.5em;
+}
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+.contact-item img {
+    width: 30px;
+    margin-right: 10px;
+    mix-blend-mode: multiply;
+}
+.contact-item a {
+    text-decoration: none;
+    color: black;
+    font-size: 0.9em;
+}
+.contact-item a:hover {
+    color: #264653;
+} */
+/* .contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin: 10px 0;
+}
+.contact-item img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    mix-blend-mode: multiply;
+    size: 30px;
+} */
