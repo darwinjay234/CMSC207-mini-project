@@ -10,9 +10,6 @@ There are no special requirements or instructions for using it—feel free to br
 ## **Live Demo**  
 🔗 [Live Demo Link](https://darwinjay234.github.io/CMSC207-mini-project/) 
 
-## **Navigation Menu**  
-The navigation menu does **not work** on the live page because this is a static website. However, the intended logic is that when you hover your mouse over the navigation bar, it expands to reveal the complete menu.
-
 
 ## **Technologies Used**  
 - **HTML** – Structure of the webpage  
@@ -24,4 +21,5 @@ The navigation menu does **not work** on the live page because this is a static 
 ✅ Add responsive design for more Javascript Codes
 
 ## **Screenshots**  
-<INSERT SCREENSHOT>
+![image](https://github.com/user-attachments/assets/cde21b8a-9206-4cf0-88d6-9916fc43ee12)
+
